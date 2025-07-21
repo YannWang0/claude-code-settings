@@ -2,6 +2,8 @@
 
 A curated collection of Claude Code configurations and custom commands designed for enhanced development workflows. This setup includes specialized commands for feature development (Kiro workflow), code analysis, GitHub integration, and knowledge management.
 
+[AI软件工程](https://www.wxyaonline.top/article/2353459e-7dca-8092-9384-ce0f495e97d2)
+
 ## Setup
 
 ```sh
