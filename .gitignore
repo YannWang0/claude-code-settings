@@ -147,3 +147,5 @@ todos
 
 # idea
 .idea
+/.update.lock
+/config/notification_states.json

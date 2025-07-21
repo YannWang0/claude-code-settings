@@ -1,96 +1,33 @@
-# CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## 基础要求
+- 用中文回答我
+- 每次都用审视的目光，仔细看我输入的潜在问题，你要指出我的问题，并给出明显在我思考框架之外的建议
+- 如果你觉得我说的太离谱了，你就骂回来，帮我瞬间清醒
+- 禁止使用emoji
 
-## Environment Setup
+## 通用编码规范
 
-This repository contains Claude Code settings, configurations and guidances. The default setup uses GitHub Copilot as the model provider through a proxy API.
+### 代码质量标准
+- 单个文件代码不超过1000行
+- 单个函数不超过50行
+- 必须有完整的注释，包括函数说明、参数说明、返回值说明
+- 变量命名必须有意义，禁止使用a、b、c这种无意义命名
+- 复杂逻辑必须有注释解释
 
-### Required Dependencies
+### 错误处理原则
+- 所有可能的错误都必须处理
+- 错误信息要明确，便于调试
+- 不允许空catch块
+- 关键路径必须有日志记录
 
-- `copilot-api`: Install globally with `npm install -g copilot-api`
-- Run `copilot-api start` to authorize GitHub Copilot account
-- Use tmux for session management: `tmux new-session -d -s copilot 'copilot-api start'`
+### 性能要求
+- 数据库查询必须有索引支持
+- 循环内不允许执行数据库操作
+- 大数据量处理必须分批进行
+- 缓存策略要明确
 
-### Configuration
-
-- `settings.json`: Contains environment variables for API configuration
-- Uses `localhost:4141` as the API base URL
-- Configured to use `claude-sonnet-4` as the primary model
-- Telemetry and non-essential traffic are disabled
-
-## Custom Commands
-
-Custom commands for Claude Code are organized in the `commands/` directory by category:
-
-### Command File Structure
-
-All command files must include YAML frontmatter with required metadata:
-
-```yaml
----
-description: Brief description of the command
-argument-hint: [expected arguments format]
-allowed-tools: List of tools the command can use
----
-```
-
-**Required fields:**
-
-- `description`: Clear, concise description of command purpose
-- `argument-hint`: Format showing expected arguments (e.g., `[problem or question]`)
-- `allowed-tools`: Comma-separated list of tools (e.g., `Read, Edit, Write, Bash(*)`)
-
-### Command Documentation
-
-- Command documentation belongs in `README.md` under the Commands section
-- Use collapsible `<details>` sections with clear summaries
-- Include usage examples and key features
-- Never document commands within the command files themselves
-
-### Directory Structure
-
-```sh
-commands/
-├── cc/          # Claude Code commands
-│   └── create-command.md
-└── gh/          # GitHub commands
-    └── review-pr.md
-```
-
-### Usage
-
-Run commands using the slash syntax:
-
-```sh
-/[category:][command] [ARGUMENTS]
-```
-
-**Examples:**
-
-- `/cc:create-command mycommand` - Create a new command
-- `/gh:review-pr 123` - Review pull request #123
-
-All available commands should be documented at README.md in Commands section.
-
-### Prompt Engineering Principles
-
-When creating or modifying command prompts:
-
-- **Structure prompts systematically**: Use clear phases or sections (e.g., Analysis Phase, Execution Phase)
-- **Define specific outputs**: Include explicit output formats and structures
-- **Provide methodical approaches**: Break complex tasks into numbered steps or bullet points
-- **Include meta-cognitive elements**: Add bias awareness, assumption checking, and uncertainty assessment
-- **Balance thoroughness with conciseness**: Aim for comprehensive analysis while maintaining clarity
-- **Use progressive complexity**: Start with simple concepts and build to more complex ones
-
-### Behavioral Guidelines
-
-- **Concise communication**: Provide direct answers without unnecessary preamble or elaboration
-- **Follow existing patterns**: Always check similar commands for consistent structure and approach
-- **Prefer editing over creating**: Always edit existing files rather than creating new ones unless absolutely necessary
-- **Use TodoWrite for complex tasks**: Track multi-step processes and ensure completion of all requirements
-
-## Guidances
-
-Claude Code guidances should be put under `guidance` directory and linked at README.md.
+### 安全规范
+- 所有用户输入必须验证
+- 密码必须加密存储
+- API接口必须有权限控制
+- 敏感信息不能记录到日志
