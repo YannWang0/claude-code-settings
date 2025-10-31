@@ -1,6 +1,6 @@
 {
   "env": {
-    "ANTHROPIC_BASE_URL": "http://localhost:4000",
+    "ANTHROPIC_BASE_URL": "http://localhost:4141",
     "ANTHROPIC_AUTH_TOKEN": "sk-dummy",
     "ANTHROPIC_MODEL": "opusplan",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4.5",

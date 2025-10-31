@@ -144,6 +144,8 @@ projects
 shell-snapshots
 statsig
 todos
+history.jsonl
+debug
 
 # idea
 .idea

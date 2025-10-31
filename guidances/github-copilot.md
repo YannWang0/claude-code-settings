@@ -1,6 +1,6 @@
 # Claude Code with Github Copilot as Model Provider
 
-Guidance for how to connect Github Copilot as model provider for Claude Code.
+Guidance for how to connect [Github Copilot](https://github.com/features/copilot) as model provider for Claude Code.
 
 > NOTICE: calling Github Copilot is not against its policy as this is officially supported per doc [here](https://docs.github.com/en/copilot/how-tos/build-copilot-extensions/building-a-copilot-agent-for-your-copilot-extension/using-copilots-llm-for-your-agent). And actually, there are lots of AI tools (e.g. Aider and Cline VSCode extension) already support Github Copilot as one of the LLM providers.
 
@@ -26,7 +26,7 @@ Once succeeds, you’d see the model list and API address:
 - claude-3.5-sonnet
 - claude-3.7-sonnet
 - claude-3.7-sonnet-thought
-- claude-sonnet-4
+- claude-sonnet-4.5
 - claude-opus-4
 - gemini-2.0-flash-001
 - gemini-2.5-pro
@@ -41,9 +41,9 @@ Once succeeds, you’d see the model list and API address:
 {
   "env": {
     "ANTHROPIC_BASE_URL": "http://localhost:4141",
-    "ANTHROPIC_AUTH_TOKEN": "dummy",
-    "ANTHROPIC_MODEL": "claude-sonnet-4",
-    "ANTHROPIC_SMALL_FAST_MODEL": "claude-3.7-sonnet",
+    "ANTHROPIC_AUTH_TOKEN": "sk-dummy",
+    "ANTHROPIC_MODEL": "claude-sonnet-4.5",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "gpt-5-mini",
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   }
@@ -60,9 +60,9 @@ If the above configure file doesn't work, use env variable directly:
 
 ```sh
 export ANTHROPIC_BASE_URL="http://localhost:4141"
-export ANTHROPIC_AUTH_TOKEN="dummy"
-export ANTHROPIC_MODEL="claude-sonnet-4"
-export ANTHROPIC_SMALL_FAST_MODEL="claude-3.7-sonnet"
+export ANTHROPIC_AUTH_TOKEN="sk-dummy"
+export ANTHROPIC_MODEL="claude-sonnet-4.5"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="gpt-5-mini"
 export DISABLE_NON_ESSENTIAL_MODEL_CALLS="1"
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
 
