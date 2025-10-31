@@ -11,7 +11,7 @@ A curated collection of Claude Code configurations and custom commands designed 
 mv ~/.claude ~/.claude.bak
 
 # Clone the claude-code-settings
-git clone https://github.com/feiskyer/claude-code-settings.git ~/.claude
+git clone https://github.com/YannWang0/claude-code-settings.git ~/.claude
 
 # Install the GitHub Copilot API proxy
 npm install -g copilot-api

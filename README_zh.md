@@ -31,7 +31,7 @@
 mv ~/.claude ~/.claude.bak
 
 # 克隆 claude-code-settings
-git clone https://github.com/feiskyer/claude-code-settings.git ~/.claude
+git clone https://github.com/YannWang0/claude-code-settings.git ~/.claude
 
 # 安装 GitHub Copilot API 代理
 npm install -g copilot-api
